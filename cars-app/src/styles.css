@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    /* 115px is the height of my footer */
+    margin: 0 0;
+    padding-bottom: 100px;
+}
