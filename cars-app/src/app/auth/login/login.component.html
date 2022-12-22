@@ -1,4 +1,4 @@
-<section class="login-form">
+<form class="login-form" (submit)="loginHandler">
   <span class="login-text">Log In</span>
   <div class="main">
     <div class="username">
@@ -9,6 +9,6 @@
       <label for="password">Password</label>
       <input type="password" name="password" />
     </div>
-    <input type="button" value="Login" />
+    <input type="submit" value="Login"/>
   </div>
-</section>
+</form>
