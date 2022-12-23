@@ -3,13 +3,14 @@
   <nav>
     <ul class="nav-list">
       <ng-template #loggedInUser>
-        <a routerLink="auth/login" routerLinkActive="active" class="nav-link">Logout</a>
+        <a routerLink="auth/profile" routerLinkActive="active" class="nav-link">Profile</a>
+        <a routerLink="auth/logout" routerLinkActive="active" class="nav-link">Logout</a>
       </ng-template>
       <ng-template #loggedOutUser>
         <a routerLink="auth/login" routerLinkActive="active" class="nav-link">Login</a>
-        <a routerLink="auth/Register" routerLinkActive="active" class="nav-link">Register</a>
+        <a routerLink="auth/register" routerLinkActive="active" class="nav-link">Register</a>
       </ng-template>
-      <ng-container *ngTemplateOutlet="true ? loggedOutUser : loggedInUser"></ng-container>
+      <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInUser : loggedOutUser"></ng-container>
     </ul>
   </nav>
 </div>
