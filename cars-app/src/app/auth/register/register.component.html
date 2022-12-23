@@ -1,4 +1,4 @@
-<form #registerForm="ngForm" class="register-form">
+<form #registerForm="ngForm" class="register-form" (ngSubmit)="registerHandler()">
     <span class="register-text">Register</span>
     <div class="username">
         <label for="username">Username</label>
@@ -10,8 +10,8 @@
     </div>
     <div class="repassword">
         <label for="repassword">Repeat Password</label>
-        <input type="repassword" id="repassword" name="repassword" ngModel />
+        <input type="password" id="repassword" name="repassword" ngModel />
     </div>
-    <button type="submit" class="button">register</button>
+    <button type="submit" class="button">Register</button>
 </form>
 <!-- (ngSubmit)="registerHandler(registerForm.value)" -->
