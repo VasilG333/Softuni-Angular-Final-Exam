@@ -1,4 +1,4 @@
-<form #registerForm="ngForm" class="register-form" (ngSubmit)="registerHandler()">
+<form #registerForm="ngForm" class="register-form" (ngSubmit)="registerHandler(registerForm.value)">
     <span class="register-text">Register</span>
     <div class="username">
         <label for="username">Username</label>

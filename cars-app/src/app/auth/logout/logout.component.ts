@@ -10,8 +10,8 @@ import { AuthService } from '../auth.service';
 export class LogoutComponent {
   constructor(private authService: AuthService ,private route: Router) {}
   logout(){
-    this.authService.user = null;
-    this.route.navigate([''])
+    this.authService.logout().subscribe(() => {
+      this.route.navigate([''])
+    });
   }
-
 }

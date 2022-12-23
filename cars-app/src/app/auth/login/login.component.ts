@@ -8,12 +8,11 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor (private authService: AuthService, private route: Router) { }
-  loginHandler(data: any): void {
-    this.authService.user = {
-      username: data.username,
-      password: data.password
-    }
-    this.route.navigate([''])
+  constructor(private authService: AuthService, private route: Router) { }
+  loginHandler(data: { username: string; password: string }): void {
+    const { username, password } = data;
+    this.authService.login(username, password).subscribe(() => {
+      this.route.navigate([''])
+    })
   }
 }

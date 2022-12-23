@@ -8,8 +8,12 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  constructor(private authService: AuthService, private route: Router) {}
-  registerHandler() {
-    this.route.navigate([''])
+  constructor(private authService: AuthService, 
+    private route: Router) {}
+  registerHandler(data: { username: string; password: string; repassword: string; }) {
+    const { username, password, repassword } = data;
+    this.authService.register(username, password, repassword).subscribe(user => {
+      this.route.navigate([''])
+    })
   }
 }
